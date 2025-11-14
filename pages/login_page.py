@@ -2,6 +2,9 @@ from .base_page import BasePage
 from .locators import LoginPageLocators
 
 class LoginPage(BasePage):
+    
+    url = "http://selenium1py.pythonanywhere.com/en-gb/accounts/login/"
+    
     def register_new_user(self, email, password):
         email_input = self.find_element_with_wait(*LoginPageLocators.REGISTER_EMAIL)
         password_input = self.find_element_with_wait(*LoginPageLocators.REGISTER_PASSWORD1)

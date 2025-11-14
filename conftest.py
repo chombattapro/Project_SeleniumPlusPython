@@ -1,27 +1,12 @@
 import pytest
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.dirname(__file__)))
-import config
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.options import Options as OptionsFirefox
+from faker import Faker
 
 @pytest.fixture(scope="session")
-def main_page_url():
-    return config.MAIN_PAGE_URL
-
-@pytest.fixture(scope="session")
-def login_page_url():
-    return config.LOGIN_PAGE_URL
-
-@pytest.fixture(scope="session")
-def product_page_url():
-    return config.PRODUCT_PAGE_URL
-
-@pytest.fixture(scope="session")
-def product_page_promo_base_url():
-    return config.PRODUCT_PAGE_PROMO_BASE_URL
+def faker():
+    return Faker()
 
 def pytest_addoption(parser):
     parser.addoption('--browser_name', action='store', default='chrome',
