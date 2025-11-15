@@ -1,14 +1,14 @@
 from selenium.webdriver.common.by import By
 
 class BasePageLocators():
-    BASKET_LINK = (By.CSS_SELECTOR, ".row a.btn.btn-default")
+    BASKET_LINK = (By.CSS_SELECTOR, "span a[href='/en-gb/basket/']")
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
-    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+    USER_ICON = (By.CSS_SELECTOR, "a[href='/en-gb/accounts/'] i")
 
 class BasketPageLocators():
     BASKET_ITEMS = (By.CSS_SELECTOR, ".basket-items")
-    EMPTY_BASKET_MESSAGE = (By.CSS_SELECTOR, "#content_inner p")
+    EMPTY_BASKET_MESSAGE = (By.XPATH, '//p[text()[normalize-space()="Your basket is empty."]]')
     
 class LoginPageLocators():
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
@@ -16,10 +16,10 @@ class LoginPageLocators():
     REGISTER_EMAIL = (By.CSS_SELECTOR, "#id_registration-email")
     REGISTER_PASSWORD1 = (By.CSS_SELECTOR, "#id_registration-password1")
     REGISTER_PASSWORD2 = (By.CSS_SELECTOR, "#id_registration-password2")
-    REGISTER_BUTTON = (By.CSS_SELECTOR, ".col-sm-6.register_form button.btn")
+    REGISTER_BUTTON = (By.CSS_SELECTOR, "button[name='registration_submit']")
     
 class ProductPageLocators():
-    ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, ".btn.btn-lg.btn-primary")
+    ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, "button[type='submit'][value='Add to basket']")
     PRODUCT_NAME = (By.CSS_SELECTOR, "div.product_main h1")
     PRODUCT_PRICE = (By.CSS_SELECTOR, "div.product_main .price_color")
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages div.alert-success")
