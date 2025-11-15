@@ -7,8 +7,8 @@ import math
 
 class ProductPage(BasePage):
 
-    url = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
-    url_promo = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer"
+    url = f"{BasePage.base_url}/catalogue/the-city-and-the-stars_95/"
+    url_promo = f"{BasePage.base_url}/catalogue/coders-at-work_207/?promo=offer"
 
     def add_product_to_basket(self):
         self.click_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON)

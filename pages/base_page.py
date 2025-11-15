@@ -8,7 +8,7 @@ class BasePage():
     SHORT_TIMEOUT = 4
     ALERT_TIMEOUT = 5
 
-    url = "http://selenium1py.pythonanywhere.com/"
+    base_url = "http://selenium1py.pythonanywhere.com/"
 
     def __init__(self, browser, url, timeout=DEFAULT_TIMEOUT):
         self.browser = browser
